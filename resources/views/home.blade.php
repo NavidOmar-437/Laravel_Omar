@@ -160,6 +160,7 @@
             </div>
 
             <div class="col-md-6">
+<<<<<<< HEAD
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Form Pertanyaan</h5>
@@ -182,6 +183,8 @@
                         </form>
                     </div>
                 </div>
+=======
+>>>>>>> 4fcad0c7c5385a9a558539f8c8e3b30353d8dce7
                 {{-- Alerts --}}
                 <div class="card ">
                     <div class="card-body">
@@ -244,8 +247,12 @@
                             </table>
                         </div>
                         <p class="text-muted small mb-0">Tambahkan <code>.table-striped</code> atau
+<<<<<<< HEAD
                             <code>.table-bordered</code> sesuai kebutuhan.
                         </p>
+=======
+                            <code>.table-bordered</code> sesuai kebutuhan.</p>
+>>>>>>> 4fcad0c7c5385a9a558539f8c8e3b30353d8dce7
                     </div>
                 </div>
             </div>
