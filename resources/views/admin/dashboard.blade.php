@@ -776,9 +776,9 @@
 			<div class="col-12 col-xl-4">
 				<div class="col-12 px-0 mb-4">
 					<div class="card shadow border-0 text-center p-0">
-						<div class="profile-cover rounded-top" data-background="../../assets/img/profile-cover.jpg" style="background: url(&quot;../../assets/img/profile-cover.jpg&quot;);"></div>
+						<div class="profile-cover rounded-top" data-background="{{ asset('assets/img/profile-cover.jpg') }}" style="background: url(&quot;{{ asset('assets/img/profile-cover.jpg') }}&quot;);"></div>
 						<div class="card-body pb-5">
-							<img src="../../assets/img/team/profile-picture-1.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
+							<img src="{{ asset('assets/img/team/profile-picture-4.jpg') }}" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
 							<h4 class="h3">Neil Sims</h4>
 							<h5 class="fw-normal">Senior Software Engineer</h5>
 							<p class="text-gray mb-4">New York, USA</p>
