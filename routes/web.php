@@ -15,3 +15,4 @@ Route::post('/question/store', [App\Http\Controllers\QuestionController::class, 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])
         ->name('dashboard');
 Route::resource('pelanggan', PelangganController::class);
+Route::put('/pelanggan/{pelanggan}', [PelangganController::class, 'update'])->name('pelanggan.update');
