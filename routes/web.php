@@ -18,4 +18,4 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'inde
 Route::resource('pelanggan', PelangganController::class);
 Route::put('/pelanggan/{id}', [PelangganController::class, 'update'])->name('pelanggan.update');
 Route::delete('/pelanggan/{id}', [PelangganController::class, 'destroy'])->name('pelanggan.destroy');
-Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+
