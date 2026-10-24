@@ -54,7 +54,8 @@ class PelangganController extends Controller
      */
     public function edit(string $id)
     {
-        $data['dataPelanggan'] = Pelanggan::findOrFail($id);
+        $pelanggan_id = $id;
+        $data['pelanggan'] = Pelanggan::findOrFail($pelanggan_id);
         return view('admin.pelanggan.edit', $data);
     }
 
@@ -80,6 +81,9 @@ class PelangganController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pelanggan_id = $id;
+        $pelanggan = Pelanggan::findOrFail($pelanggan_id);
+        $pelanggan->delete();
+        return redirect()->route('pelanggan.index')->with('success', 'Data Berhasil Dihapus');
     }
 }
