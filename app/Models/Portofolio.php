@@ -12,6 +12,7 @@ class Portofolio extends Model
         'judul',
         'deskripsi',
         'teknologi',
+        'link',
         'gambar',
     ];
 }
