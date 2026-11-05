@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PelangganController;
@@ -7,7 +8,6 @@ use App\Http\Controllers\PortofolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,5 +29,4 @@ Route::resource('portofolio', PortofolioController::class);
 Route::get('/profil/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('/profil', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profil/foto', [ProfileController::class, 'destroyPhoto'])->name('profile.photo.destroy');
-Route::resource('user', UserController::class);
-Route::get('/user', [UserController::class, 'index'])->name('admin.user.index');
+Route::resource('user', UserController::class)->except('show')->names('admin.user');

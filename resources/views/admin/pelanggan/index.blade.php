@@ -1,5 +1,6 @@
 @extends('layouts.admin.app')
 @section('content')
+    @section('title', 'Pelanggan')
     {{-- Start Main Content --}}
     <div class="py-4">
         <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
@@ -20,16 +21,17 @@
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
                 <h1 class="h4">Data Pelanggan</h1>
-                <p class="mb-0">List data seluruh pelanggan</p>
+                <p class="mb-0">Kelola informasi kontak pelanggan dalam satu tempat.</p>
             </div>
             <div>
-                <a href="{{ route('pelanggan.create') }}" class="btn btn-success text-white"><i
-                        class="far fa-question-circle me-1"></i>
-                    Tambah Pelanggan</a>
+                <a href="{{ route('pelanggan.create') }}" class="btn btn-success text-white">+ Tambah pelanggan</a>
             </div>
         </div>
     </div>
 
+    @if (session('success'))
+        <div class="alert alert-success" role="status">{{ session('success') }}</div>
+    @endif
     <div class="row">
         <div class="col-12 mb-4">
             <div class="card border-0 shadow mb-4">
@@ -38,17 +40,17 @@
                         <table id="table-pelanggan" class="table table-centered table-nowrap mb-0 rounded">
                             <thead class="thead-light">
                                 <tr>
-                                    <th class="border-0">First Name</th>
-                                    <th class="border-0">Last Name</th>
-                                    <th class="border-0">Birthday</th>
+                                    <th class="border-0">Nama depan</th>
+                                    <th class="border-0">Nama belakang</th>
+                                    <th class="border-0">Tanggal lahir</th>
                                     <th class="border-0">Gender</th>
                                     <th class="border-0">Email</th>
-                                    <th class="border-0">Phone</th>
-                                    <th class="border-0 rounded-end">Action</th>
+                                    <th class="border-0">Telepon</th>
+                                    <th class="border-0 rounded-end">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($dataPelanggan as $item)
+                                @forelse ($dataPelanggan as $item)
                                     <tr>
                                         <td>{{ $item->first_name }}</td>
                                         <td>{{ $item->last_name }}</td>
@@ -68,7 +70,7 @@
                                                 Edit
                                             </a>
                                             <form action="{{ route('pelanggan.destroy', $item->pelanggan_id) }}"
-                                                method="POST" style="display:inline">
+                                                method="POST" class="d-inline" onsubmit="return confirm('Hapus data pelanggan ini?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">
@@ -84,7 +86,9 @@
                                             </form>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr><td colspan="7" class="py-5 text-center"><strong>Belum ada pelanggan</strong><div class="text-secondary small mt-1">Tambahkan pelanggan pertama untuk mulai mengelola data.</div></td></tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

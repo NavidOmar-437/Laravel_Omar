@@ -20,11 +20,11 @@
         </nav>
         <div class="d-flex justify-content-between w-100 flex-wrap">
             <div class="mb-3 mb-lg-0">
-                <h1 class="h4">Tambah Pelanggan</h1>
-                <p class="mb-0">Form untuk menambahkan data pelanggan baru.</p>
+                <h1 class="h4">Tambah pelanggan</h1>
+                <p class="mb-0">Isi informasi berikut untuk menambahkan pelanggan baru.</p>
             </div>
             <div>
-                <a href="" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
+                <a href="{{ route('pelanggan.index') }}" class="btn btn-outline-primary">Kembali ke daftar</a>
             </div>
         </div>
     </div>
